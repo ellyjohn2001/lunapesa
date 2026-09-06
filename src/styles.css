@@ -1,0 +1,269 @@
+/* ===== styles.css ===== */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Lunapesa — Next-Gen Crash Gaming.
+ * Primary: #6C3CE1 (vibrant purple)
+ * Secondary: #00D4AA (mint green)
+ * Accents: #FF6B6B (coral), #FFD93D (gold), #4ECDC4 (teal)
+ * Fonts: Space Grotesk (display) + Plus Jakarta Sans (body)
+ * Clean, modern, minimalist aesthetic with subtle gradients
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-panel: var(--panel);
+  --color-panel-foreground: var(--panel-foreground);
+  --color-elevated: var(--elevated);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --font-display: "Space Grotesk", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  
+  --animate-crash-flash: crash-flash 0.5s ease-out;
+  --animate-rise: rise 0.35s ease-out;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s infinite;
+  --animate-slide-up: slide-up 0.4s ease-out;
+  --animate-glow-pulse: glow-pulse 1.5s ease-in-out infinite;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Clean dark background */
+  --background: #0c0c14;
+  --foreground: #f0f0f5;
+
+  --card: #14141e;
+  --card-foreground: #f0f0f5;
+  --panel: linear-gradient(145deg, #181828, #0e0e18);
+  --panel-foreground: #f0f0f5;
+  --elevated: #1c1c2e;
+
+  --popover: #181828;
+  --popover-foreground: #f0f0f5;
+
+  /* PRIMARY: #6C3CE1 (vibrant purple) */
+  --primary: #6C3CE1;
+  --primary-foreground: #ffffff;
+
+  /* SECONDARY: #00D4AA (mint green) */
+  --secondary: #00D4AA;
+  --secondary-foreground: #0c0c14;
+
+  --muted: #1c1c2e;
+  --muted-foreground: #8899bb;
+
+  --accent: #2a1a3e;
+  --accent-foreground: #f0f0f5;
+
+  --destructive: #FF6B6B;
+  --destructive-foreground: #ffffff;
+
+  --warning: #FFD93D;
+  --warning-foreground: #0c0c14;
+
+  --success: #4ECDC4;
+  --success-foreground: #0c0c14;
+
+  --border: #2a2a4a;
+  --input: #1c1c2e;
+  --ring: #6C3CE1;
+
+  --chart-1: #6C3CE1;
+  --chart-2: #00D4AA;
+  --chart-3: #FF6B6B;
+  --chart-4: #FFD93D;
+  --chart-5: #4ECDC4;
+
+  --glow-primary: 0 0 40px rgba(108, 60, 225, 0.3), 0 0 80px rgba(108, 60, 225, 0.1);
+  --glow-secondary: 0 0 40px rgba(0, 212, 170, 0.3);
+  --glow-gold: 0 0 40px rgba(255, 217, 61, 0.3);
+  --glow-coral: 0 0 40px rgba(255, 107, 107, 0.3);
+  --gradient-panel: linear-gradient(145deg, #181828, #0e0e18);
+  --gradient-primary: linear-gradient(135deg, #6C3CE1, #8B5CF6);
+  --gradient-secondary: linear-gradient(135deg, #00D4AA, #4ECDC4);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@keyframes crash-flash {
+  0% {
+    background-color: rgba(108, 60, 225, 0.2);
+    box-shadow: 0 0 60px rgba(108, 60, 225, 0.15);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: var(--glow-primary);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(108, 60, 225, 0.5), 0 0 120px rgba(108, 60, 225, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(108, 60, 225, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(108, 60, 225, 0.6), 0 0 80px rgba(108, 60, 225, 0.2);
+  }
+}
+
+@utility panel-surface {
+  background: var(--gradient-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+@utility glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+@utility glow-secondary {
+  box-shadow: var(--glow-secondary);
+}
+
+@utility glow-gold {
+  box-shadow: var(--glow-gold);
+}
+
+@utility glow-coral {
+  box-shadow: var(--glow-coral);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 30px rgba(108, 60, 225, 0.3);
+}
+
+@utility text-glow-secondary {
+  text-shadow: 0 0 30px rgba(0, 212, 170, 0.3);
+}
+
+@utility text-glow-gold {
+  text-shadow: 0 0 30px rgba(255, 217, 61, 0.3);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility shimmer-text {
+  background: linear-gradient(90deg, #6C3CE1, #00D4AA, #FF6B6B, #6C3CE1);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+    background: #0c0c14;
+  }
+
+  body {
+    background: radial-gradient(ellipse at 50% 0%, #14141e 0%, #0c0c14 70%);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+}
