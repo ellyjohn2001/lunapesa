@@ -297,7 +297,7 @@ function DepositForm({ defaultPhone }: { defaultPhone: string }) {
                 Waiting for M-Pesa confirmation...
               </p>
               <p className="text-xs text-muted-foreground">
-                Expect a prompt from <span className="font-semibold text-primary">Lunapesa</span>
+                Expect a prompt from <span className="font-semibold text-primary">GROVER COMMERCE</span>
               </p>
               <p className="text-xs text-muted-foreground">
                 Please stay on this page until the transaction finishes processing.
